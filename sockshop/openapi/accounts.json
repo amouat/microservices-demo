@@ -83,7 +83,15 @@
             "type": "object",
             "properties": {
                 "_embedded": {
-                    "$ref": "#/definitions/Customer"
+		    "type": "object",
+		    "properties": {
+			"customer": {
+			    "type": "array",
+			    "items": {
+		                "$ref": "#/definitions/Customer"		
+			    }
+			}
+		    }
                 },
                 "_links": {
                     "type": "object"
@@ -103,7 +111,15 @@
             "type": "object",
             "properties": {
                 "_embedded": {
-                    "$ref": "#/definitions/Card"
+		    "type": "object",
+		    "properties": {
+			"cards": {
+			    "type": "array",
+			    "items": {
+				"$ref": "#/definitions/Card"
+			    }
+			}
+		    }                    
                 },
                 "_links": {
                     "type": "object"
@@ -308,7 +324,15 @@
             "type": "object",
             "properties": {
                 "_embedded": {
-                    "$ref": "#/definitions/Address"
+		    "type": "object",
+		    "properties": {
+			"address": {
+			    "type": "array",
+			    "items": {
+				"$ref": "#/definitions/Address"
+			    }
+			}
+		    }
                 },
                 "_links": {
                     "type": "object"
