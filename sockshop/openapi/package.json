@@ -3,7 +3,7 @@
     "nicename": "Microservices demo API test",
     "version": "0.0.0",
     "private": true,
-    "description": "Example application using Dredd and CI",
+    "description": "Verify microservices API endpoints against the specification",
     
     "engines": {
         "node": "6",
