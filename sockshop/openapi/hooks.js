@@ -80,7 +80,7 @@ hooks.afterEach((transaction, done) => {
     
 });
 
-hooks.beforeEach((transaction, done) => { 
+hooks.beforeEach((transaction, done) => {
     db.collection('customer').insertMany(customer, (err) => {
         
         if (err) {
@@ -121,12 +121,24 @@ hooks.beforeEach((transaction, done) => {
 });
 
 
-// TODO: Can't make POST and PUT work, skipping for now 
-
 hooks.before("/carts/{customerId}/items > POST", function(transaction, done) {
-    transaction.skip = true;
+    transaction.request.headers['Content-Type'] = 'application/json';
+    transaction.request.body = JSON.stringify(
+	{
+	    "itemId":"819e1fbf-8b7e-4f6d-811f-693534916a8b",
+	    "quantity": 20,
+	    "unitPrice" : 99.0
+	}
+    );
     done();
 });
+
+// TODO: Can't make POST and PUT work, skipping for now 
+
+// hooks.before("/carts/{customerId}/items > POST", function(transaction, done) {
+//     transaction.skip = true;
+//     done();
+// });
 
 hooks.before("/carts/{customerId}/items > PATCH", function(transaction, done) {
     transaction.skip = true;

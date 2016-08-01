@@ -94,16 +94,15 @@
 			"schema": {                            
 			    "$ref": "#/definitions/CartItem",			    
 			    "example": {
-				"item": {
-				    "itemId":"819e1fbf-8b7e-4f6d-811f-693534916a8b",
-				    "quantity": 20,
-				    "unitPrice" : 99.0
-				}}
+				"itemId":"819e1fbf-8b7e-4f6d-811f-693534916a8b",
+				"quantity": 20,
+				"unitPrice" : 99.0
+			    }
 			}
 		    }
 		],
                 "responses": {
-                    "202": {			
+                    "201": {
                         "description": "",
 			"schema": {
 			    "$ref": "#/definitions/CartItem"
