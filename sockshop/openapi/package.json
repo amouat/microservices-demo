@@ -1,7 +1,7 @@
 {
     "name": "microservices-demo-api-test",
     "nicename": "Microservices demo API test",
-    "version": "0.0.0",
+    "version": "0.0.1",
     "private": true,
     "description": "Verify microservices API endpoints against the specification",
     
@@ -16,7 +16,7 @@
         "express-mongo-db": "^2.0.3"
     },
     "devDependencies": {
-        "dredd": "",
+        "dredd": "1.5.0",
         "mongodb": ""
     }
 }

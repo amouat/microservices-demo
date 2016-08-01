@@ -56,66 +56,40 @@ hooks.afterAll((transactions, done) => {
 
 // After each test clear contents of the database (we want isolated tests)
 hooks.afterEach((transaction, done) => {
-    db.collection('customer').remove({}, (err) => {
-        if (err) { return done(err) }
-    });
-
-    db.collection('card').remove({}, (err) => {
-        if (err) { return done(err) }
-    });
-
-    db.collection('cart').remove({}, (err) => {
-        if (err) { return done(err) }
-    });
-
-    db.collection('address').remove({}, (err) => {
-        if (err) { return done(err) }
-    });
-
-    db.collection('item').remove({}, (err) => {
-        if (err) { return done(err) }
-    });
-
+    db.dropDatabase();
     done();
     
 });
 
 hooks.beforeEach((transaction, done) => {
     db.collection('customer').insertMany(customer, (err) => {
-        
         if (err) {
 	    console.log('customer before err'+ err);
-	    return done(err) }
-        
+	}
     });
 
     db.collection('card').insertMany(card, (err) => {
-        
         if (err) {
 	    console.log('card before err'+ err);
-	    return done(err) }
-        
+	}
     });
 
     db.collection('cart').insertMany(cart, (err) => {
-        
         if (err) {
 	    console.log('cart before err'+ err);
-	    return done(err) }
+	}
     });
 
     db.collection('address').insertMany(address, (err) => {
-        
         if (err) {
 	    console.log('addy before err'+ err);
-	    return done(err) }
+	}
     });
 
     db.collection('item').insertMany(item, (err) => {
-        
         if (err) {
 	    console.log('item before err'+ err);
-	    return done(err) }
+	}
     });
     done();
 });
